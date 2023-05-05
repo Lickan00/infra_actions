@@ -71,9 +71,9 @@ jobs:
       uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.HOST }}
-        username: ${{ secrets.DOCKER_USERNAME }}
+        username: ${{ secrets.USER }}
         key: ${{ secrets.SSH_KEY }}
-        passphrase: ${{ secrets.PASSPHRASE }} # Если ваш ssh-ключ защищён фразой-паролем
+        passphrase: ${{ secrets.PASSPHRASE }}
         script: |
           # Выполняет pull образа с DockerHub
           sudo docker pull balchugov/infra_project
